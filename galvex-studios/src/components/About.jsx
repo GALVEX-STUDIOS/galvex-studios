@@ -32,8 +32,7 @@ function About() {
     }}>
 
 
-      <img 
-  src="/about-bg.jpg"
+  <img src={`${import.meta.env.BASE_URL}about-bg.jpg`} 
   style={{
     position: "absolute",
     width: "100%",

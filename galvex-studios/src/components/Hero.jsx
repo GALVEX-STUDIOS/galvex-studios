@@ -14,8 +14,7 @@ function Hero() {
     }}>
 
       {/* 🔥 BACKGROUND IMAGE */}
-      <img 
-        src="/hero-bg.jpg"
+       <img src={`${import.meta.env.BASE_URL}hero-bg.jpg`} 
         alt="background"
         style={{
           position: "absolute",

@@ -14,8 +14,7 @@ function Services() {
     }}>
 
       {/* 🔥 CLEAN BACKGROUND (NO BLUR) */}
-      <img 
-        src="/services-bg.jpg"
+      <img src={`${import.meta.env.BASE_URL}services-bg.jpg`}
         alt="background"
         style={{
           position: "absolute",
