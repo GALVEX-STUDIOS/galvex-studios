@@ -8,6 +8,9 @@ on:
 jobs:
   Deploy-Production:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./galvex-studios
     env:
       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
@@ -15,8 +18,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Install Dependencies
+        run: npm install
+
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
+        working-directory: ./
 
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
